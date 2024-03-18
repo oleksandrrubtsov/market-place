@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+{% load static %}
+  
+<title>{% block title %} Login {% endblock %}</title>
+
+{% block content %}          
+<h2>Log In</h2>      
+<form method="POST" >
+{% csrf_token %}
+{{ form }}
+<button type="submit" class="btn btn-primary py-1 px-2  text-black"> Login </button>
+</form>
+<div class="border-top pt-2">
+  <small><a href="{% url 'core:register' %}">Don't have an account?</a></small>
+</div>
+{% endblock %}
+            
